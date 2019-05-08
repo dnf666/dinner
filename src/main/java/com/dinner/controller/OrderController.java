@@ -34,6 +34,9 @@ public class OrderController {
         if (Strings.isNullOrEmpty(phone)) {
             return new ResponseEntity(0, "phone is null", "");
         }
+        if("null".equals(phone)){
+            return new ResponseEntity(0, "服务器开小差，请刷新界面", "");
+        }
         if (orders == null || orders.size() == 0) {
             return new ResponseEntity(0, "order is null", "");
         }
